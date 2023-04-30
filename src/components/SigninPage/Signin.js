@@ -30,7 +30,7 @@ const SignIn = () => {
         <div className="flex justify-center">
             <div className="border-2 border rounded-lg m-20 p-10">
             <div className="font-mono mt-5 flex justify-center">
-            <div className="">
+            <form className="" onSubmit={handleSubmission}>
                 <h1 className="mt-6 text-center text-3xl text-gray-900">SignUp</h1>
                 <InputControl label = "Email" type = "email" placeholder = "Enter Email"  onChange={(e)=>setValues(prev => ({...prev, email : e.target.value}))}/>
                 <InputControl label = "Password" type = "password" placeholder = "Enter Password"  onChange={(e)=>setValues(prev => ({...prev, password : e.target.value}))}/>
@@ -43,7 +43,7 @@ const SignIn = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
             </div>
         </div>
