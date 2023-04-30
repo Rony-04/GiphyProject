@@ -11079,9 +11079,11 @@ var _signin = require("../SigninPage/signin");
 var _signinDefault = parcelHelpers.interopDefault(_signin);
 var _search = require("../Search/Search");
 var _searchDefault = parcelHelpers.interopDefault(_search);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const Home = ()=>{
     _s();
+    const navigate = (0, _reactRouterDom.useNavigate)();
     const [uid, setUid] = (0, _react.useState)(false);
     (0, _react.useEffect)(()=>{
         (0, _auth.onAuthStateChanged)((0, _firebase.auth), (user)=>{
@@ -11102,36 +11104,40 @@ const Home = ()=>{
                         children: "LogOut"
                     }, void 0, false, {
                         fileName: "src/components/Home/Home.js",
-                        lineNumber: 29,
+                        lineNumber: 31,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchDefault.default), {}, void 0, false, {
                         fileName: "src/components/Home/Home.js",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Home/Home.js",
-                lineNumber: 28,
+                lineNumber: 30,
                 columnNumber: 18
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginDefault.default), {}, void 0, false, {
                 fileName: "src/components/Home/Home.js",
-                lineNumber: 33,
+                lineNumber: 35,
                 columnNumber: 13
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/Home/Home.js",
-            lineNumber: 27,
+            lineNumber: 29,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/Home/Home.js",
-        lineNumber: 26,
+        lineNumber: 28,
         columnNumber: 9
     }, undefined);
 };
-_s(Home, "d1/+VBGGeUSpQfIQAVZskLpipfQ=");
+_s(Home, "GvgQQWvl4+tDjhH6aEh9BSllrLY=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = Home;
 exports.default = Home;
 var _c;
@@ -11142,7 +11148,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","../../firebase":"bQFTD","firebase/auth":"79vzg","../LoginPage/Login":"86CAq","../SigninPage/signin":"bc1aY","../Search/Search":"3U9hs"}],"bQFTD":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","../../firebase":"bQFTD","firebase/auth":"79vzg","../LoginPage/Login":"86CAq","../SigninPage/signin":"bc1aY","../Search/Search":"3U9hs","react-router-dom":"9xmpe"}],"bQFTD":[function(require,module,exports) {
 // Import the functions you need from the SDKs you need
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -24088,7 +24094,8 @@ const Login = ()=>{
     const [disableButton, setDisableButton] = (0, _react.useState)(false);
     const [errMsg, setErrMsg] = (0, _react.useState)("");
     const navigate = (0, _reactRouterDom.useNavigate)();
-    const handleSubmission = ()=>{
+    const handleSubmission = (e)=>{
+        e.preventDefault();
         if (!values.email || !values.password) {
             setErrMsg("Please fill all the fields");
             return;
@@ -24105,8 +24112,9 @@ const Login = ()=>{
         className: "flex justify-center",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "border-2 border rounded-lg m-20 p-10",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
                 className: "font-mono mt-5 flex justify-center ",
+                onSubmit: handleSubmission,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "",
                     children: [
@@ -24115,7 +24123,7 @@ const Login = ()=>{
                             children: "LogIn"
                         }, void 0, false, {
                             fileName: "src/components/LoginPage/Login.js",
-                            lineNumber: 31,
+                            lineNumber: 32,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _inputControlDefault.default), {
@@ -24130,7 +24138,7 @@ const Login = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/LoginPage/Login.js",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _inputControlDefault.default), {
@@ -24145,7 +24153,7 @@ const Login = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/LoginPage/Login.js",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -24155,7 +24163,7 @@ const Login = ()=>{
                                     children: errMsg
                                 }, void 0, false, {
                                     fileName: "src/components/LoginPage/Login.js",
-                                    lineNumber: 35,
+                                    lineNumber: 36,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -24166,7 +24174,7 @@ const Login = ()=>{
                                     children: "LogIn"
                                 }, void 0, false, {
                                     fileName: "src/components/LoginPage/Login.js",
-                                    lineNumber: 36,
+                                    lineNumber: 37,
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -24180,45 +24188,45 @@ const Login = ()=>{
                                                 children: "SignUp"
                                             }, void 0, false, {
                                                 fileName: "src/components/LoginPage/Login.js",
-                                                lineNumber: 39,
+                                                lineNumber: 40,
                                                 columnNumber: 56
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/LoginPage/Login.js",
-                                        lineNumber: 38,
+                                        lineNumber: 39,
                                         columnNumber: 29
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/LoginPage/Login.js",
-                                    lineNumber: 37,
+                                    lineNumber: 38,
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/LoginPage/Login.js",
-                            lineNumber: 34,
+                            lineNumber: 35,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/LoginPage/Login.js",
-                    lineNumber: 30,
+                    lineNumber: 31,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/LoginPage/Login.js",
-                lineNumber: 29,
+                lineNumber: 30,
                 columnNumber: 13
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/LoginPage/Login.js",
-            lineNumber: 28,
+            lineNumber: 29,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/LoginPage/Login.js",
-        lineNumber: 27,
+        lineNumber: 28,
         columnNumber: 9
     }, undefined);
 };
@@ -24336,8 +24344,9 @@ const SignIn = ()=>{
             className: "border-2 border rounded-lg m-20 p-10",
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "font-mono mt-5 flex justify-center",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
                     className: "",
+                    onSubmit: handleSubmission,
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                             className: "mt-6 text-center text-3xl text-gray-900",
@@ -24511,7 +24520,7 @@ const Search = ()=>{
                         placeholder: "Search Giphy",
                         value: search,
                         onChange: (e)=>setSearch(e.target.value),
-                        className: "rounded-md appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        className: "rounded-md appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-black focus:z-10 sm:text-sm"
                     }, void 0, false, {
                         fileName: "src/components/Search/Search.js",
                         lineNumber: 29,
@@ -24522,7 +24531,7 @@ const Search = ()=>{
                             getSearch(0);
                             setCurrentPage(0);
                         },
-                        className: "group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black focus:outline-none focus:ring-2 focus:ring-offset-2",
+                        className: "group relative py-2 px-4 border text-sm font-medium rounded-md text-white bg-black focus:outline-none focus:ring-2 focus:ring-offset-2",
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Search/Search.js",
@@ -24586,23 +24595,16 @@ const Search = ()=>{
             }, undefined),
             !search ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _trendingGiphyDefault.default), {}, void 0, false, {
                 fileName: "src/components/Search/Search.js",
-                lineNumber: 67,
+                lineNumber: 68,
                 columnNumber: 18
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "p-5 p-2 m-2 grid-cols-3 gap-4",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "flex flex-wrap place-content-center",
-                    children: !gifs ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+                    children: !gifs.length && gifs ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
                         fileName: "src/components/Search/Search.js",
-                        lineNumber: 70,
-                        columnNumber: 28
-                    }, undefined) : gifs.length == 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-2xl",
-                        children: "No results found"
-                    }, void 0, false, {
-                        fileName: "src/components/Search/Search.js",
-                        lineNumber: 70,
-                        columnNumber: 57
+                        lineNumber: 72,
+                        columnNumber: 41
                     }, undefined) : gifs.map((gif)=>{
                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "m-2",
@@ -24611,24 +24613,24 @@ const Search = ()=>{
                                 className: "rounded-md"
                             }, void 0, false, {
                                 fileName: "src/components/Search/Search.js",
-                                lineNumber: 73,
+                                lineNumber: 75,
                                 columnNumber: 33
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Search/Search.js",
-                            lineNumber: 72,
+                            lineNumber: 74,
                             columnNumber: 29
                         }, undefined);
                     })
                 }, void 0, false, {
                     fileName: "src/components/Search/Search.js",
-                    lineNumber: 68,
+                    lineNumber: 70,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Search/Search.js",
-                lineNumber: 67,
-                columnNumber: 36
+                lineNumber: 69,
+                columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
@@ -24662,7 +24664,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const Shimmer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "p-5 p-2 m-2 grid-cols-3 gap-4 mt-[100px]",
+        className: "p-5 p-2 m-2 grid-cols-3 gap-4 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "justify-center flex flex-wrap",
             children: [
@@ -29030,12 +29032,9 @@ var _s = $RefreshSig$();
 const TrendingGiphy = ()=>{
     _s();
     const [gifs, setGifs] = (0, _react.useState)([]);
-    const [search, setSearch] = (0, _react.useState)("");
     const [err, setErr] = (0, _react.useState)("");
-    const navigate = (0, _reactRouterDom.useNavigate)();
     const [currentPage, setCurrentPage] = (0, _react.useState)(0);
     const [totalPages, setTotalPages] = (0, _react.useState)(0);
-    const [searchPage, setSearchPage] = (0, _react.useState)(0);
     (0, _react.useEffect)(()=>{
         const fetchData = async ()=>{
             const response = await (0, _axiosDefault.default).get("https://api.giphy.com/v1/gifs/trending", {
@@ -29063,7 +29062,7 @@ const TrendingGiphy = ()=>{
                         onClick: (e)=>setCurrentPage(currentPage - 1)
                     }, void 0, false, {
                         fileName: "src/components/Giphy/TrendingGiphy.js",
-                        lineNumber: 34,
+                        lineNumber: 31,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -29071,7 +29070,7 @@ const TrendingGiphy = ()=>{
                         children: currentPage + " of " + totalPages
                     }, void 0, false, {
                         fileName: "src/components/Giphy/TrendingGiphy.js",
-                        lineNumber: 35,
+                        lineNumber: 32,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29079,24 +29078,24 @@ const TrendingGiphy = ()=>{
                         onClick: (e)=>setCurrentPage(currentPage + 1)
                     }, void 0, false, {
                         fileName: "src/components/Giphy/TrendingGiphy.js",
-                        lineNumber: 38,
+                        lineNumber: 35,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Giphy/TrendingGiphy.js",
-                lineNumber: 33,
+                lineNumber: 30,
                 columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            gifs.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+                fileName: "src/components/Giphy/TrendingGiphy.js",
+                lineNumber: 39,
+                columnNumber: 33
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "p-5 p-2 m-2 grid-cols-3 gap-4",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "flex flex-wrap place-content-center",
-                    children: !gifs ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
-                        fileName: "src/components/Giphy/TrendingGiphy.js",
-                        lineNumber: 44,
-                        columnNumber: 28
-                    }, undefined) : gifs?.map((gif)=>{
+                    children: gifs?.map((gif)=>{
                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 src: gif.images.fixed_height.url,
@@ -29104,37 +29103,33 @@ const TrendingGiphy = ()=>{
                                 className: "rounded-lg border mb-2"
                             }, void 0, false, {
                                 fileName: "src/components/Giphy/TrendingGiphy.js",
-                                lineNumber: 47,
+                                lineNumber: 46,
                                 columnNumber: 29
                             }, undefined)
                         }, gif.id, false, {
                             fileName: "src/components/Giphy/TrendingGiphy.js",
-                            lineNumber: 46,
+                            lineNumber: 45,
                             columnNumber: 25
                         }, undefined);
                     })
                 }, void 0, false, {
                     fileName: "src/components/Giphy/TrendingGiphy.js",
-                    lineNumber: 42,
+                    lineNumber: 41,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Giphy/TrendingGiphy.js",
-                lineNumber: 41,
-                columnNumber: 9
+                lineNumber: 40,
+                columnNumber: 17
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Giphy/TrendingGiphy.js",
-        lineNumber: 31,
+        lineNumber: 28,
         columnNumber: 9
     }, undefined);
 };
-_s(TrendingGiphy, "2Z3GdNo/IOxoEkoWXA67kz+erZQ=", false, function() {
-    return [
-        (0, _reactRouterDom.useNavigate)
-    ];
-});
+_s(TrendingGiphy, "n9vumGo19ZMr3tCUqhXBkoiFQPs=");
 _c = TrendingGiphy;
 exports.default = TrendingGiphy;
 var _c;

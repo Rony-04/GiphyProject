@@ -14,7 +14,7 @@ const Search = () => {
     const getSearch = async (page) => {
         const searchResults = await axios("https://api.giphy.com/v1/gifs/search", {
             params: {
-                api_key: process.env.REACT_APP_API_KEY,
+                api_key: "GlVGYHkr3WSBnllca54iNt0yFbjz7L65",
                 q: search,
                 offset: 50 * page
             },
@@ -31,12 +31,12 @@ const Search = () => {
             placeholder="Search Giphy"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="rounded-md appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+            className="rounded-md appearance-none relative block px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none  focus:border-black focus:z-10 sm:text-sm"
             />
             <button onClick={()=>{
                 getSearch(0);
                 setCurrentPage(0);
-            }} className="group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black focus:outline-none focus:ring-2 focus:ring-offset-2">Search</button>
+            }} className="group relative py-2 px-4 border  text-sm font-medium rounded-md text-white bg-black focus:outline-none focus:ring-2 focus:ring-offset-2">Search</button>
             </div>
             {/* Pagination */}
             {!search?null:(<div className="flex justify-center">
@@ -64,10 +64,12 @@ const Search = () => {
                         })
                     }}></button>
             </div>)}
-        {!search?<TrendingGiphy/>:(<div className="p-5 p-2 m-2 grid-cols-3 gap-4">
+            {/* Display Gifs */}
+        {!search?<TrendingGiphy/>:(
+        <div className="p-5 p-2 m-2 grid-cols-3 gap-4">
             <div className="flex flex-wrap place-content-center">
                 {
-                    !gifs?(<Shimmer/>):(gifs.length==0?(<p className="text-2xl">No results found</p>):(gifs.map((gif)=>{
+                    !gifs.length&&gifs?(<Shimmer/>):((gifs.map((gif)=>{
                         return (
                             <div className="m-2">
                                 <img src={gif.images.fixed_height.url} className="rounded-md"/>

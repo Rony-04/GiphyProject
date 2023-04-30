@@ -5,8 +5,10 @@ import Login from "../LoginPage/Login";
 import SignIn from "../SigninPage/signin";
 import Search from "../Search/Search";
 import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
     const [uid, setUid] = useState(false);
     useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
