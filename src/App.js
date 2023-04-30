@@ -1,6 +1,4 @@
-import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {auth} from "./firebase";
 import Home from "./components/Home/Home.js";
 import Login from "./components/LoginPage/Login.js";
 import SignIn from "./components/SigninPage/signin.js";
@@ -10,7 +8,7 @@ const App = () => {
     
     return (
         <div className="">
-            <Router>
+            <Router basename="/GiphyProject">
                 <Routes>
                     <Route path ="/" element = {<Home/>}></Route>
                     <Route path ="/search" element = {<Search/>}></Route>

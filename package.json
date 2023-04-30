@@ -1,14 +1,14 @@
 {
   "homepage": "https://asrk03.github.io/GiphyProject/",
-  "name": "giphy-project",
+  "name": "GiphyProject",
   "version": "1.0.0",
   "description": "",
   "source": "index.html",
   "type": "module",
   "scripts": {
     "start": "parcel",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

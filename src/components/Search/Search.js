@@ -3,7 +3,6 @@ import Shimmer from "../Shimmer/Shimmer";
 import axios from "axios";
 import { useState } from "react";
 import TrendingGiphy from "../Giphy/TrendingGiphy";
-import { useNavigate } from "react-router-dom";
 
 const Search = () => {
     const [search, setSearch] = useState("");
