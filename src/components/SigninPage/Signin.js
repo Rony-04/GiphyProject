@@ -4,21 +4,22 @@ import { Link, useNavigate} from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../../firebase";
 const SignIn = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate("/");
     const [values, setValues] = useState({email:"", password:""});
     const [errMsg, setErrMsg] = useState("");
     const [disableButton, setDisableButton] = useState(false);
 
-    const handleSubmission = () => {
+    const handleSubmission = (e) => {
+        e.preventDefault();
         if(!values.email || !values.password){
             setErrMsg("Please fill all the fields");
             return;
         }
-        setErrMsg("");
         createUserWithEmailAndPassword(auth, values.email, values.password)
         .then(async (res)=>{
+            console.log(res)
             setDisableButton(true);
-            navigate("/login");
+            navigate("/");
         })
         .catch((err)=>{
             setErrMsg(err.message);
@@ -29,7 +30,7 @@ const SignIn = () => {
         <div className="flex justify-center">
             <div className="border-2 border rounded-lg m-20 p-10">
             <div className="font-mono mt-5 flex justify-center">
-            <form className="" onSubmit={handleSubmission}>
+            <div className="">
                 <h1 className="mt-6 text-center text-3xl text-gray-900">SignUp</h1>
                 <InputControl label = "Email" type = "email" placeholder = "Enter Email"  onChange={(e)=>setValues(prev => ({...prev, email : e.target.value}))}/>
                 <InputControl label = "Password" type = "password" placeholder = "Enter Password"  onChange={(e)=>setValues(prev => ({...prev, password : e.target.value}))}/>
@@ -42,7 +43,7 @@ const SignIn = () => {
                         </p>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
             </div>
         </div>

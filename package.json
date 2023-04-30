@@ -6,6 +6,7 @@
   "source": "index.html",
   "type": "module",
   "scripts": {
+    "postinstall": "echo 'text/css' > dist/index.*.css.content-type",
     "start": "parcel",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
